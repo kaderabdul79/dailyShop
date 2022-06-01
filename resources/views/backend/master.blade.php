@@ -136,11 +136,11 @@
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li class="active has-sub">
-                            <a class="js-arrow" href="#"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                            <a class="js-arrow" href="{{route('admin.dashboard')}}"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
                         <li class="active has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Category Module</a>
+                                <i class="fas fa-tachometer-alt"></i>Category Module<i class="fas fa-angle-down ml-2"></i></a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
                                     <a href="index.html">Add Category</a>
@@ -149,7 +149,7 @@
                         </li>
                         <li class="active has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Brand Module</a>
+                                <i class="fas fa-tachometer-alt"></i>Brand Module<i class="fas fa-angle-down ml-2"></i></a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
                                     <a href="index.html">Add Brand</a>
