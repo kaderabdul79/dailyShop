@@ -35,7 +35,7 @@
 
 </head>
 
-<body>
+<body class="animsition">
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
         <header class="header-mobile d-block d-lg-none">
@@ -143,7 +143,7 @@
                                 <i class="fas fa-tachometer-alt"></i>Category Module<i class="fas fa-angle-down ml-2"></i></a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="index.html">Add Category</a>
+                                    <a href="{{route('add-category')}}">Add Category</a>
                                 </li>
                             </ul>
                         </li>
@@ -168,7 +168,18 @@
         <!-- END MENU SIDEBAR-->
 
         <!-- PAGE CONTAINER-->
-        @yield('content')
+        <div class="page-container">
+            <!-- HEADER DESKTOP-->
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    @yield('content')
+                </div>
+            </div>
+            <!-- END MAIN CONTENT-->
+            <!-- END PAGE CONTAINER-->
+        </div>
 
     </div>
 
