@@ -5,7 +5,17 @@
 <div class="col-lg-8">
     <div class="card">
         <div class="card-header"><strong>Add</strong><small> Category</small></div>
-        <form action="" method="POST">
+        {{-- <?php  $a = Session::get('message')     ?>
+        <script>
+            setInterval(() => {
+                let msg = document.getElementById('#show-message');
+                msg.text = $a
+            }, 3000);
+        </script>
+        <p id="show-message" class="bg-info"></p> --}}
+        <p class="bg-info">{{ Session::get('message')}}</p>
+        <form action="{{route('new-category')}}" method="POST" enctype="multipart/form-data">
+            @csrf
             <div class="card-body card-block">
                 {{-- Category Name --}}
                 <div class="form-group">

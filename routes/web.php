@@ -17,3 +17,5 @@ Route::get('/admin/dashboard', [App\Http\Controllers\HomeController::class, 'ind
 
 // category Module
 Route::get('/category/add-category', [CategoryController::class,'addCategory'])->name('add-category');
+Route::post('/category/new-category', [CategoryController::class,'newCategory'])->name('new-category');
+
