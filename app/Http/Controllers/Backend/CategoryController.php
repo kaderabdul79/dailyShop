@@ -30,4 +30,11 @@ class CategoryController extends Controller
         
         return redirect()->back()->with("message","Category Created Sucessfully");
     }
+
+    public function manageCategory(){
+        $categories = Category::all();
+        return view('backend.category.manage-category',['categories' => $categories]);
+    }
+
+    
 }

@@ -145,6 +145,9 @@
                                 <li>
                                     <a href="{{route('add-category')}}">Add Category</a>
                                 </li>
+                                <li>
+                                    <a href="{{route('manage-category')}}">Manage Category</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="active has-sub">

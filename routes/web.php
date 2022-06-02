@@ -19,3 +19,7 @@ Route::get('/admin/dashboard', [App\Http\Controllers\HomeController::class, 'ind
 Route::get('/category/add-category', [CategoryController::class,'addCategory'])->name('add-category');
 Route::post('/category/new-category', [CategoryController::class,'newCategory'])->name('new-category');
 
+Route::get('/category/manage-category', [CategoryController::class,'manageCategory'])->name('manage-category');
+
+Route::get('/category/edit-category/{id}', [CategoryController::class,'editCategory'])->name('edit-category');
+Route::post('/category/update-category', [CategoryController::class,'updateCategory'])->name('update-category');
