@@ -1,7 +1,16 @@
 @extends('backend.master')
 
 @section('content')
+<div class="row">
+    <div class="col-md-12">
+        <div class="overview-wrap"><h2></h2>
+            <a href="{{route('add-category')}}"><button class="au-btn au-btn-icon au-btn--blue"><i class="zmdi zmdi-plus"></i>Add Category</button>
+            </a>
+        </div>
+    </div>
+</div>
 <div class="row m-t-10">
+    
     <div class="col-md-12">
         <!-- DATA TABLE-->
         <div class="table-responsive m-b-40">

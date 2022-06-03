@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Backend;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\CategoryStoreRequest;
 
 class CategoryController extends Controller
 {
@@ -20,14 +22,14 @@ class CategoryController extends Controller
         $directory = './category-image/';
         $image->move($directory,$imageName);
         $imageUrl = $directory.$imageName;
-
+    
         $category->category_name = $request->category_name;
         $category->category_description = $request->category_description;
         $category->category_image = $imageUrl;
         $category->publication_status = $request->publication_status;
-
+    
         $category->save();
-        
+            
         return redirect()->back()->with("message","Category Created Sucessfully");
     }
 

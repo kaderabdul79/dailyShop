@@ -14,7 +14,7 @@
         </script>
         <p id="show-message" class="bg-info"></p> --}}
         {{-- <p class="bg-info">{{ Session::get('message')}}</p> --}}
-        @if (Session::get('message'))
+        @if (Session::has('message'))
         <div class="sufee-alert alert with-close alert-primary alert-dismissible fade show">
             <span class="badge badge-pill badge-primary">Success</span>
             {{ Session::get('message')}}
@@ -31,6 +31,11 @@
                 <div class="form-group">
                     <label for="category_name" class=" form-control-label">Category Name</label>
                     <input type="text" id="category_name" name="category_name" placeholder="Enter category name" class="form-control">
+                    @error('category_name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
                 {{-- category_description --}}
                 <div class="row form-group">
@@ -39,6 +44,11 @@
                     </div><br/>
                     <div class="col-12 col-md-12">
                         <textarea name="category_description" id="category_description" rows="4" placeholder="" class="form-control"></textarea>
+                        @error('category_description')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
                 </div>
                 {{-- Category Image --}}
@@ -48,6 +58,11 @@
                     </div>
                     <div class="col-12 col-md-12">
                         <input type="file" id="file-input" name="category_image" class="form-control-file">
+                        @error('category_image')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
                 </div>
                 {{-- Publication Status --}}
@@ -63,6 +78,13 @@
                             <label for="inline-radio2" class="form-check-label ">
                                 <input type="radio" id="inline-radio2" name="publication_status" value="0" class="form-check-input">Unpublished
                             </label>
+
+                            @error('publication_status')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                            
                         </div>
                     </div>
                 </div>
