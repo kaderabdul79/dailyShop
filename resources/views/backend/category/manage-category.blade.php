@@ -22,7 +22,7 @@
                     @endphp
                     @foreach ($categories as $category)
                      <tr>
-                        <td>{{$i}}</td>
+                        <td>{{$i++}}</td>
                         <td>{{$category->category_name}}</td>
                         <td>{{Str::limit($category->category_description, 40)}}</td>
                         <td><img src="{{ asset($category->category_image) }}" alt="" width="60px" height="50px" ></td>
@@ -31,7 +31,7 @@
                             <a href="{{route('edit-category',$category->id)}}"><button class="item mr-2" data-toggle="tooltip" data-placement="top" title="Edit">
                                 <i class="zmdi zmdi-edit"></i>
                             </button></a>
-                            <a href="{{route('update-category')}}"><button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                            <a href="{{route('delete-category',$category->id)}}"><button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                                 <i class="zmdi zmdi-delete"></i>
                             </button></a>
                         </td>

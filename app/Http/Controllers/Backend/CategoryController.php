@@ -36,5 +36,38 @@ class CategoryController extends Controller
         return view('backend.category.manage-category',['categories' => $categories]);
     }
 
+    public function editCategory($id){
+        $category = Category::where('id',$id)->first();
+        return view('backend.category..edit-category',['category' => $category]);
+    }
+
+    public function updateCategory(Request $request){
+        $image = $request->file('category_image');
+        $category = Category::find($request->category_id);
+
+        if($image){
+            unlink($category->category_image);
+            $imageName = $image->getClientOriginalName();
+            $directory = './category-image/';
+            $image->move($directory,$imageName);
+            $imageUrl = $directory.$imageName;
+        }else{
+            $imageUrl = $category->category_image;
+        }
+        $category->category_name = $request->category_name;
+        $category->category_description = $request->category_description;
+        $category->category_image = $imageUrl;
+        $category->publication_status = $request->publication_status;
+        $category->save();
+        return redirect()->route('manage-category');
+    }
+
+    public function deleteCategory($id){
+        $category = Category::find($id);
+        // unlink($category->category_image);
+        $category->delete();
+        return redirect()->route('manage-category');
+    }
+
     
 }

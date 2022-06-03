@@ -4,7 +4,7 @@
 
 <div class="col-lg-8">
     <div class="card">
-        <div class="card-header"><strong>Add</strong><small> Category</small></div>
+        <div class="card-header"><strong>Edit</strong><small> Category</small></div>
         {{-- <?php  $a = Session::get('message')     ?>
         <script>
             setInterval(() => {
@@ -14,23 +14,14 @@
         </script>
         <p id="show-message" class="bg-info"></p> --}}
         {{-- <p class="bg-info">{{ Session::get('message')}}</p> --}}
-        @if (Session::get('message'))
-        <div class="sufee-alert alert with-close alert-primary alert-dismissible fade show">
-            <span class="badge badge-pill badge-primary">Success</span>
-            {{ Session::get('message')}}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">×</span>
-            </button>
-        </div>
-        @endif
-        
-        <form action="{{route('new-category')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{route('update-category')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="card-body card-block">
+                <input name="category_id" value="{{$category->id}}" type="hidden" class="form-control" id="exampleFormControlInput1">
                 {{-- Category Name --}}
                 <div class="form-group">
                     <label for="category_name" class=" form-control-label">Category Name</label>
-                    <input type="text" id="category_name" name="category_name" placeholder="Enter category name" class="form-control">
+                    <input type="text" id="category_name" value="{{$category->category_name}}" name="category_name" placeholder="Enter category name" class="form-control">
                 </div>
                 {{-- category_description --}}
                 <div class="row form-group">
@@ -38,7 +29,7 @@
                         <label for="textarea-input" class=" form-control-label">Category Description</label>
                     </div><br/>
                     <div class="col-12 col-md-12">
-                        <textarea name="category_description" id="category_description" rows="4" placeholder="" class="form-control"></textarea>
+                        <textarea name="category_description" value="{{$category->category_description}}" id="category_description" rows="4" placeholder="" class="form-control"></textarea>
                     </div>
                 </div>
                 {{-- Category Image --}}
@@ -47,7 +38,8 @@
                         <label for="file-input" class=" form-control-label">Category Image</label>
                     </div>
                     <div class="col-12 col-md-12">
-                        <input type="file" id="file-input" name="category_image" class="form-control-file">
+                        <input type="file" id="file-input" value="{{$category->category_image}}" name="category_image" class="form-control-file">
+                        <img src="{{ asset($category->category_image) }}" alt="" width="60px" height="50px" >
                     </div>
                 </div>
                 {{-- Publication Status --}}
@@ -58,10 +50,10 @@
                     <div class="col col-md-12">
                         <div class="form-check-inline form-check">
                             <label for="inline-radio1" class="form-check-label">
-                                <input type="radio" id="inline-radio1" name="publication_status" value="1" class="form-check-input">Published
+                                <input type="radio" id="inline-radio1" name="publication_status" value="1" {{  $category->publication_status == 1 ? 'checked' : ''  }} class="form-check-input">Published
                             </label>
                             <label for="inline-radio2" class="form-check-label ">
-                                <input type="radio" id="inline-radio2" name="publication_status" value="0" class="form-check-input">Unpublished
+                                <input type="radio" id="inline-radio2" name="publication_status" value="0" {{  $category->publication_status == 0 ? 'checked' : ''   }} class="form-check-input">Unpublished
                             </label>
                         </div>
                     </div>
