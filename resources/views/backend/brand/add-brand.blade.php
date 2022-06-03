@@ -4,7 +4,7 @@
 
 <div class="col-lg-8">
     <div class="card">
-        <div class="card-header"><strong>Add</strong><small> Category</small></div>
+        <div class="card-header"><strong>Add</strong><small> brand</small></div>
         {{-- <?php  $a = Session::get('message')     ?>
         <script>
             setInterval(() => {
@@ -24,41 +24,41 @@
         </div>
         @endif
         
-        <form action="{{route('new-category')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{route('new-brand')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="card-body card-block">
-                {{-- Category Name --}}
+                {{-- brand Name --}}
                 <div class="form-group">
-                    <label for="category_name" class=" form-control-label">Category Name</label>
-                    <input type="text" id="category_name" name="category_name" onblur="getCategoryName()" placeholder="Enter category name" class="form-control">
-                    @error('category_name')
+                    <label for="brand_name" class=" form-control-label">brand Name</label>
+                    <input type="text" id="brand_name" name="brand_name" onblur="getbrandName()" placeholder="Enter brand name" class="form-control">
+                    @error('brand_name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
                 </div>
-                {{-- category_description --}}
+                {{-- brand_description --}}
                 <div class="row form-group">
                     <div class="col col-md-12">
-                        <label for="textarea-input" class=" form-control-label">Category Description</label>
+                        <label for="textarea-input" class=" form-control-label">brand Description</label>
                     </div><br/>
                     <div class="col-12 col-md-12">
-                        <textarea name="category_description" id="category_description" rows="4" placeholder="" class="form-control"></textarea>
-                        @error('category_description')
+                        <textarea name="brand_description" id="brand_description" rows="4" placeholder="" class="form-control"></textarea>
+                        @error('brand_description')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                         @enderror
                     </div>
                 </div>
-                {{-- Category Image --}}
+                {{-- brand Image --}}
                 <div class="row form-group">
                     <div class="col col-md-12">
-                        <label for="file-input" class=" form-control-label">Category Image</label>
+                        <label for="file-input" class=" form-control-label">brand Image</label>
                     </div>
                     <div class="col-12 col-md-12">
-                        <input type="file" id="file-input" name="category_image" class="form-control-file">
-                        @error('category_image')
+                        <input type="file" id="file-input" name="brand_image" class="form-control-file">
+                        @error('brand_image')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -88,25 +88,25 @@
                         </div>
                     </div>
                 </div>
-                <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">Add Category</button>
+                <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">Add brand</button>
             </div>
         </form>
     </div>
 </div>
 {{-- <script>
-    function getCategoryName(){
-        var category_name = $('#category_name').val();
-        var categoryName = "";
+    function getbrandName(){
+        var brand_name = $('#brand_name').val();
+        var brandName = "";
 
         $.ajax({
-            url: "get-category-name/"+category_name,
+            url: "get-brand-name/"+brand_name,
             method: "GET",
             dataType: "JSON",
             success: function(response){
-                // categoryName = response;
+                // brandName = response;
                 // console.log(response);
-                var categoryName = response.category_name;
-                if(categoryName == category_name){
+                var brandName = response.brand_name;
+                if(brandName == brand_name){
                     console.log("similar");
                 }else{
                     console.log(":ok");
@@ -114,7 +114,7 @@
                 // $('#productCode').val(result);
                 // console.log(a);
             }
-            // alert(categoryName);
+            // alert(brandName);
         })
     }
 </script>  --}}

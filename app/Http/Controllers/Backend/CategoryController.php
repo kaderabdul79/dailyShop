@@ -71,5 +71,17 @@ class CategoryController extends Controller
         return redirect()->route('manage-category');
     }
 
+    // public function getCategoryName($category_name){
+    //     $categoryName = Category::find($category_name)->$category_name;
+
+    //     $result = [
+    //         'category_name' => $categoryName
+    //     ];
+    //     // from a funtion just return can 1 statement
+    //     // return json_encode($categoryName);
+    //     // return json_encode($brandName);
+    //     return json_encode($result);
+    // }
+
     
 }

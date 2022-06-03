@@ -155,10 +155,10 @@
                                 <i class="fas fa-tachometer-alt"></i>Brand Module<i class="fas fa-angle-down ml-2"></i></a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="index.html">Add Brand</a>
+                                    <a href="{{route('add-brand')}}">Add Brand</a>
                                 </li>
                                 <li>
-                                    <a href="index2.html">Manage Brand</a>
+                                    <a href="{{route('manage-brand')}}">Manage Brand</a>
                                 </li>
                             </ul>
                         </li>
