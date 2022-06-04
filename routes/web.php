@@ -34,8 +34,8 @@ Route::get('/category/delete-category/{id}', [CategoryController::class,'deleteC
 // brand
 
 Route::get('/brand/add-brand', [BrandController::class,'addBrand'])->name('add-brand');
-// Route::post('/brand/new-brand', [BrandController::class,'newBrand'])->name('new-brand');
-// Route::get('/brand/edit-brand/{id}', [BrandController::class,'editBrand'])->name('edit-brand');
-// Route::post('/brand/update-brand', [BrandController::class,'updateBrand'])->name('update-brand');
-// Route::get('/brand/delete-brand/{id}', [BrandController::class,'deleteBrand'])->name('delete-brand');
-// Route::get('/brand/manage-brand', [BrandController::class,'manageBrand'])->name('manage-brand');
+Route::post('/brand/new-brand', [BrandController::class,'newBrand'])->name('new-brand');
+Route::get('/brand/edit-brand/{id}', [BrandController::class,'editBrand'])->name('edit-brand');
+Route::post('/brand/update-brand', [BrandController::class,'updateBrand'])->name('update-brand');
+Route::get('/brand/delete-brand/{id}', [BrandController::class,'deleteBrand'])->name('delete-brand');
+Route::get('/brand/manage-brand', [BrandController::class,'manageBrand'])->name('manage-brand');
