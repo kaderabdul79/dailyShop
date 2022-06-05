@@ -162,6 +162,18 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="active has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-tachometer-alt"></i>Product Module<i class="fas fa-angle-down ml-2"></i></a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="{{route('add-product')}}">Add Product</a>
+                                </li>
+                                <li>
+                                    <a href="{{route('manage-product')}}">Manage Product</a>
+                                </li>
+                            </ul>
+                        </li>
                             </ul>
                         </li>
                     </ul>

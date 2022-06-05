@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\BrandController;
+use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\CategoryController;
 
 
@@ -31,11 +32,17 @@ Route::get('/category/delete-category/{id}', [CategoryController::class,'deleteC
 // Route::get('/get-category-name/{category_name}', [ProductController::class,'getCategoryName'])->name('get-category-name-by-id');
 
 
-// brand
-
+// brand module
 Route::get('/brand/add-brand', [BrandController::class,'addBrand'])->name('add-brand');
 Route::post('/brand/new-brand', [BrandController::class,'newBrand'])->name('new-brand');
 Route::get('/brand/edit-brand/{id}', [BrandController::class,'editBrand'])->name('edit-brand');
 Route::post('/brand/update-brand', [BrandController::class,'updateBrand'])->name('update-brand');
 Route::get('/brand/delete-brand/{id}', [BrandController::class,'deleteBrand'])->name('delete-brand');
 Route::get('/brand/manage-brand', [BrandController::class,'manageBrand'])->name('manage-brand');
+
+// product module
+Route::get('/product/add-product', [ProductController::class,'addProduct'])->name('add-product');
+Route::post('/brand/new-product', [ProductController::class,'newProduct'])->name('new-product');
+Route::get('/product/manage-product', [ProductController::class,'manageProduct'])->name('manage-product');
+
+
