@@ -5,11 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Frontend\FrontendHomeController;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
@@ -50,3 +48,7 @@ Route::post('/product/update-product', [ProductController::class,'updateProduct'
 Route::get('/product/delete-product/{id}', [ProductController::class,'deleteProduct'])->name('delete-product');
 // Route::get('/product/get-category-brand-name/{categoryId}/{brandId}', [ProductController::class,'getCategoryBrandName'])->name('get-category-name-by-id');
 
+// end dashboard Here
+
+// start for fronted
+Route::get('/', [FrontendHomeController::class,'showHomePage']);
