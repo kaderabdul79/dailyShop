@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-md-12">
         <div class="overview-wrap"><h2></h2>
-            <a href="{{route('add-category')}}"><button class="au-btn au-btn-icon au-btn--blue"><i class="zmdi zmdi-plus"></i>Add Category</button>
+            <a href="{{route('add-product')}}"><button class="au-btn au-btn-icon au-btn--blue"><i class="zmdi zmdi-plus"></i>Add product</button>
             </a>
         </div>
     </div>
@@ -29,18 +29,18 @@
                     @php
                        $i=1; 
                     @endphp
-                    @foreach ($categories as $category)
+                    @foreach ($products as $product)
                      <tr>
                         <td>{{$i++}}</td>
-                        <td>{{$category->category_name}}</td>
-                        <td>{{Str::limit($category->category_description, 40)}}</td>
-                        <td><img src="{{ asset($category->category_image) }}" alt="" width="60px" height="50px" ></td>
-                        <td class="process">{{  $category->publication_status == 1 ? 'Published' : 'Unpublished'   }}</td>
+                        <td>{{$product->product_name}}</td>
+                        <td>{{Str::limit($product->product_description, 40)}}</td>
+                        <td><img src="{{ asset($product->product_image) }}" alt="product image" width="60px" height="50px" ></td>
+                        <td class="process">{{  $product->publication_status == 1 ? 'Published' : 'Unpublished'   }}</td>
                         <td>
-                            <a href="{{route('edit-category',$category->id)}}"><button class="item mr-2" data-toggle="tooltip" data-placement="top" title="Edit">
+                            <a href="{{route('edit-product',$product->id)}}"><button class="item mr-2" data-toggle="tooltip" data-placement="top" title="Edit">
                                 <i class="zmdi zmdi-edit"></i>
                             </button></a>
-                            <a href="{{route('delete-category',$category->id)}}"><button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                            <a href="{{route('delete-product',$product->id)}}"><button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                                 <i class="zmdi zmdi-delete"></i>
                             </button></a>
                         </td>

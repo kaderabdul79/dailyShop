@@ -44,5 +44,9 @@ Route::get('/brand/manage-brand', [BrandController::class,'manageBrand'])->name(
 Route::get('/product/add-product', [ProductController::class,'addProduct'])->name('add-product');
 Route::post('/brand/new-product', [ProductController::class,'newProduct'])->name('new-product');
 Route::get('/product/manage-product', [ProductController::class,'manageProduct'])->name('manage-product');
-
+Route::get('/product/view-product/{id}', [ProductController::class,'viewProduct'])->name('view-product');
+Route::get('/product/edit-product/{id}', [ProductController::class,'editProduct'])->name('edit-product');
+Route::post('/product/update-product', [ProductController::class,'updateProduct'])->name('update-product');
+Route::get('/product/delete-product/{id}', [ProductController::class,'deleteProduct'])->name('delete-product');
+// Route::get('/product/get-category-brand-name/{categoryId}/{brandId}', [ProductController::class,'getCategoryBrandName'])->name('get-category-name-by-id');
 
