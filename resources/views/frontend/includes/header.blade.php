@@ -3,24 +3,23 @@
         <div class="row max-inner">
             
           <div class="columns col-2">
-            <a href="index.html" title="Indigo" class="logo">Daily Shop</a>
+            <a href="{{route('home-page')}}" title="Indigo" class="logo">Daily Shop</a>
           </div>
   
-          <div class="columns col-6">
+          <div class="columns col-4">
             <a href="#" class="toggle-nav">
               <i class="fa fa-bars"></i> Menu
             </a>
             <nav class="main-nav">
               <ul>
-                <li><a href="shop.html">New collection</a></li>
-                <li><a href="shop.html">Catalog</a></li>
-                <li><a href="shop.html">Promotion</a></li>
-                <li><a href="shop.html">Gift card</a></li>
+                <li><a href="{{route('shop-page')}}">Shop</a></li>
+                <li><a href="{{route('show-cart')}}">Cart</a></li>
+                <li><a href="{{route('product-details')}}">Promotion</a></li>
               </ul>
             </nav>
           </div>
   
-          <div class="columns col-4">
+          <div class="columns col-6">
             <ul class="header-controls">
               <li class="header-search">
                 <a href="#" class="reveal-search">
@@ -40,7 +39,7 @@
                 </a>                
               </li>
               <li class="header-actions">
-                <a href="#" title="Log out"><span class="fa fa-lock"></span> Log out</a>
+                <a href="{{url('admin/login')}}" title="Log out"><span class="fa fa-lock"></span>Admin Login</a>
               </li>
             </ul>
           </div>

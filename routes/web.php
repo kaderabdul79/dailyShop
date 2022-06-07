@@ -14,13 +14,10 @@ Auth::routes();
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/admin/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.dashboard');
-
 // category Module
 Route::get('/category/add-category', [CategoryController::class,'addCategory'])->name('add-category');
 Route::post('/category/new-category', [CategoryController::class,'newCategory'])->name('new-category');
-
 Route::get('/category/manage-category', [CategoryController::class,'manageCategory'])->name('manage-category');
-
 Route::get('/category/edit-category/{id}', [CategoryController::class,'editCategory'])->name('edit-category');
 Route::post('/category/update-category', [CategoryController::class,'updateCategory'])->name('update-category');
 Route::get('/category/delete-category/{id}', [CategoryController::class,'deleteCategory'])->name('delete-category');
@@ -51,4 +48,7 @@ Route::get('/product/delete-product/{id}', [ProductController::class,'deleteProd
 // end dashboard Here
 
 // start for fronted
-Route::get('/', [FrontendHomeController::class,'showHomePage']);
+Route::get('/', [FrontendHomeController::class,'showHomePage'])->name('home-page');
+Route::get('/shop', [FrontendHomeController::class,'showShopPage'])->name('shop-page');
+Route::get('/product', [FrontendHomeController::class,'showProductDetails'])->name('product-details');
+Route::get('/cart', [FrontendHomeController::class,'showCart'])->name('show-cart');

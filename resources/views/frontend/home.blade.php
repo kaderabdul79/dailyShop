@@ -67,10 +67,10 @@
 
       <!-- start: grid item -->
       <div class="columns col-3 grid-item">
-        <div class="grid-item-media"><a href="product.html"><img src="{{asset('frontend/images/grid-item-image-1.jpg')}}" /></a></div>
+        <div class="grid-item-media"><a href="{{route('product-details')}}"><img src="{{asset('frontend/images/grid-item-image-1.jpg')}}" /></a></div>
         <div class="grid-item-desc">
           <h2>
-            <a class="grid-item-link" href="product.html">
+            <a class="grid-item-link" href="{{route('product-details')}}">
               <span class="grid-item-meta">Lorem ipsum</span><hr />
               <span class="grid-item-title">consectetur adipisicing elit</span>
               <span class="grid-item-price">$220.00</span>
