@@ -19,8 +19,10 @@
                     <tr>
                         <th>Serial No.</th>
                         <th>Name</th>
-                        <th>Description</th>
                         <th>Image</th>
+                        <th>Product Code</th>
+                        <th>Product Price</th>
+                        <th>Product Quantity</th>
                         <th>Publication status</th>
                         <th>Action</th>
                     </tr>
@@ -33,8 +35,10 @@
                      <tr>
                         <td>{{$i++}}</td>
                         <td>{{$product->product_name}}</td>
-                        <td>{{Str::limit($product->product_description, 40)}}</td>
                         <td><img src="{{ asset($product->product_image) }}" alt="product image" width="60px" height="50px" ></td>
+                        <td>{{$product->product_code}}</td>
+                        <td>{{$product->product_price}}</td>
+                        <td>{{$product->product_quantity}}</td>
                         <td class="process">{{  $product->publication_status == 1 ? 'Published' : 'Unpublished'   }}</td>
                         <td>
                             <a href="{{route('edit-product',$product->id)}}"><button class="item mr-2" data-toggle="tooltip" data-placement="top" title="Edit">

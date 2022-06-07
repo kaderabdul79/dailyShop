@@ -92,116 +92,20 @@
         <div class="row max-inner sortable-grid">
   
           <!-- start: grid item -->
+              
+          @foreach ($products as $product)
           <div class="columns col-3 grid-item">
-            <div class="grid-item-media"><a href="product.html"><img src="{{asset('frontend/images/grid-item-image-1.jpg')}}" /></a></div>
+            <div class="grid-item-media"><a href="{{route('product-details')}}"><img src="{{ asset($product->product_image)  }}" alt="{{$product->name}}" width="330px" height="500px" /></a></div>
             <div class="grid-item-desc">
               <h2>
-                <a class="grid-item-link" href="product.html">
-                  <span class="grid-item-meta">Lorem ipsum</span><hr />
-                  <span class="grid-item-title">consectetur adipisicing</span>
-                  <span class="grid-item-price">$220.00</span>
+                <a class="grid-item-link" href="{{route('product-details')}}">
+                  <span class="grid-item-title">{{$product->product_name}}</span>
+                  <span class="grid-item-price">{{$product->product_price}} TK</span>
                 </a>
               </h2>
             </div>
           </div>
-          <!-- end: grid item -->
-          <!-- start: grid item -->
-          <div class="columns col-3 grid-item">
-            <div class="grid-item-media"><a href="product.html"><img src="{{asset('frontend/images/grid-item-image-2.jpg')}}" /></a></div>
-            <div class="grid-item-desc">
-              <h2>
-                <a href="product.html">
-                  <span class="grid-item-meta">Dolor sit</span><hr />
-                  <span class="grid-item-title">Dolore magna aliqua</span>
-                  <span class="grid-item-price">$187.00</span>
-                </a>
-              </h2>
-            </div>
-          </div>
-          <!-- end: grid item -->
-          <!-- start: grid item -->
-          <div class="columns col-3 grid-item">
-            <div class="grid-item-media"><a href="product.html"><img src="{{asset('frontend/images/grid-item-image-3.jpg')}}" /></a></div>
-            <div class="grid-item-desc">
-              <h2>
-                <a href="product.html">
-                  <span class="grid-item-meta">Duis aute irure</span><hr />
-                  <span class="grid-item-title">Dolor in reprehenderit</span>
-                  <span class="grid-item-price">$380.00</span>
-                </a>
-              </h2>
-            </div>
-          </div>
-          <!-- end: grid item -->
-          <!-- start: grid item -->
-          <div class="columns col-3 grid-item">
-            <div class="grid-item-media"><a href="product.html"><img src="{{asset('frontend/images/grid-item-image-4.jpg')}}" /></a></div>
-            <div class="grid-item-desc">
-              <h2>
-                <a href="product.html">
-                  <span class="grid-item-meta">Enim ad minim </span><hr />
-                  <span class="grid-item-title"> Nemo enim ipsam</span>
-                  <span class="grid-item-price">$130.00</span>
-                </a>
-              </h2>
-            </div>
-          </div>
-          <!-- end: grid item -->
-          <!-- start: grid item -->
-          <div class="columns col-3 grid-item">
-            <div class="grid-item-media"><a href="product.html"><img src="{{asset('frontend/images/grid-item-image-5.jpg')}}" /></a></div>
-            <div class="grid-item-desc">
-              <h2>
-                <a href="product.html">
-                  <span class="grid-item-meta">Enim ad minim </span><hr />
-                  <span class="grid-item-title"> Nemo enim ipsam</span>
-                  <span class="grid-item-price">$130.00</span>
-                </a>
-              </h2>
-            </div>
-          </div>
-          <!-- end: grid item -->
-          <!-- start: grid item -->
-          <div class="columns col-3 grid-item">
-            <div class="grid-item-media"><a href="product.html"><img src="{{asset('frontend/images/grid-item-image-6.jpg')}}" /></a></div>
-            <div class="grid-item-desc">
-              <h2>
-                <a href="product.html">
-                  <span class="grid-item-meta">Enim ad minim </span><hr />
-                  <span class="grid-item-title"> Nemo enim ipsam</span>
-                  <span class="grid-item-price">$130.00</span>
-                </a>
-              </h2>
-            </div>
-          </div>
-          <!-- end: grid item -->
-          <!-- start: grid item -->
-          <div class="columns col-3 grid-item">
-            <div class="grid-item-media"><a href="product.html"><img src="{{asset('frontend/images/grid-item-image-7.jpg')}}" /></a></div>
-            <div class="grid-item-desc">
-              <h2>
-                <a href="product.html">
-                  <span class="grid-item-meta">Enim ad minim </span><hr />
-                  <span class="grid-item-title"> Nemo enim ipsam</span>
-                  <span class="grid-item-price">$130.00</span>
-                </a>
-              </h2>
-            </div>
-          </div>
-          <!-- end: grid item -->
-          <!-- start: grid item -->
-          <div class="columns col-3 grid-item">
-            <div class="grid-item-media"><a href="product.html"><img src="{{asset('frontend/images/grid-item-image-8.jpg')}}" /></a></div>
-            <div class="grid-item-desc">
-              <h2>
-                <a href="product.html">
-                  <span class="grid-item-meta">Enim ad minim </span><hr />
-                  <span class="grid-item-title"> Nemo enim ipsam</span>
-                  <span class="grid-item-price">$130.00</span>
-                </a>
-              </h2>
-            </div>
-          </div>
+          @endforeach
           <!-- end: grid item -->
   
         </div>
