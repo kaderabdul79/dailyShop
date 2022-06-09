@@ -21,22 +21,22 @@
   <!-- start: main content -->
   <section class="main-content">
     <div class="row max-inner">
-      
-      <div class="columns col-5 product-media">
-        <a href="#"><img src="images/product-image-1.jpg" /></a>
+      @if ($product)
+     <div class="columns col-5 product-media">
+        <a href="#"><img src="{{asset($product->product_image)}}" height="600px" width="500px" /></a>
       </div>
 
       <div class="columns col-6 product-info float-right">
         
-        <span class="product-meta">Manufacturer name</span>
-        <h2>Consectetur adipisicing elit</h2>
-        <span class="product-price">$220.00</span>
+        {{-- <span class="product-meta">{{$product->category_name}}</span> --}}
+        <h2>{{$product->product_name}}</h2>
+        <span class="product-price">{{$product->product_price}} TK</span>
 
         <div class="row product-desc">
-          <p>
-            Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas.              
-          </p>
+          <p>{{$product->product_long_description}}</p>
         </div>
+          
+        @endif
 
 
         <!-- start: product options form -->

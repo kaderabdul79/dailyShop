@@ -94,11 +94,14 @@
           <!-- start: grid item -->
               
           @foreach ($products as $product)
+         {{-- {{ $product->id}} --}}
           <div class="columns col-3 grid-item">
-            <div class="grid-item-media"><a href="{{route('product-details')}}"><img src="{{ asset($product->product_image)  }}" alt="{{$product->name}}" width="330px" height="500px" /></a></div>
+            <div class="grid-item-media"><a href="{{route('product-details',$product->id)}}">
+              <img src="{{ asset($product->product_image)  }}" alt="{{$product->name}}" width="330px" height="500px" /></a>
+            </div>
             <div class="grid-item-desc">
               <h2>
-                <a class="grid-item-link" href="{{route('product-details')}}">
+                <a class="grid-item-link" href="{{route('product-details',$product->id)}}">
                   <span class="grid-item-title">{{$product->product_name}}</span>
                   <span class="grid-item-price">{{$product->product_price}} TK</span>
                 </a>

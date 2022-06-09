@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\BrandController;
+use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Frontend\FrontendHomeController;
@@ -50,5 +51,8 @@ Route::get('/product/delete-product/{id}', [ProductController::class,'deleteProd
 // start for fronted
 Route::get('/', [FrontendHomeController::class,'showHomePage'])->name('home-page');
 Route::get('/shop', [FrontendHomeController::class,'showShopPage'])->name('shop-page');
-Route::get('/product', [FrontendHomeController::class,'showProductDetails'])->name('product-details');
-Route::get('/cart', [FrontendHomeController::class,'showCart'])->name('show-cart');
+Route::get('/product/{id}', [FrontendHomeController::class,'showProductDetails'])->name('product-details');
+
+Route::get('/cart/show-cart', [CartController::class, 'showCart'])->name('cart.show-cart');
+
+// Route::post('/cart/add-to-cart', [CartController::class, 'addToCart'])->name('add-to-cart');

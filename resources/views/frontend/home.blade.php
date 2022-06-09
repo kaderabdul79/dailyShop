@@ -66,18 +66,21 @@
     <div class="row max-inner">
 
       <!-- start: grid item -->
-      <div class="columns col-3 grid-item">
-        <div class="grid-item-media"><a href="{{route('product-details')}}"><img src="{{asset('frontend/images/grid-item-image-1.jpg')}}" /></a></div>
-        <div class="grid-item-desc">
-          <h2>
-            <a class="grid-item-link" href="{{route('product-details')}}">
-              <span class="grid-item-meta">Lorem ipsum</span><hr />
-              <span class="grid-item-title">consectetur adipisicing elit</span>
-              <span class="grid-item-price">$220.00</span>
-            </a>
-          </h2>
-        </div>
-      </div>
+      @if (isset($products))
+        @foreach ($products as $product)
+         <div class="columns col-3 grid-item">
+          <div class="grid-item-media"><a href="{{route('product-details',$product->id)}}"><img src="{{asset($product->product_image)}}" height="400px" width="300px" /></a></div>
+          <div class="grid-item-desc">
+            <h2>
+              <a class="grid-item-link" href="">
+                <span class="grid-item-title">{{$product->name}}</span>
+                <span class="grid-item-price">{{$product->price}}</span>
+              </a>
+            </h2>
+          </div>
+        </div>    
+      @endforeach
+      @endif
       <!-- end: grid item -->
 
     </div>
