@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Models\Slider;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -13,9 +14,12 @@ class FrontendHomeController extends Controller
     public function showHomePage(){
         $products = Product::orderBy('id','DESC')->take(4)->get();
         $cartCollection = Cart::content();
+        // slider
+        $sliders = Slider::where('publication_status',1)->get();
         return view('frontend.home',[
             'products' => $products,
-            'cartCollection' => $cartCollection
+            'cartCollection' => $cartCollection,
+            'sliders' => $sliders
         ]);
 
         

@@ -13,40 +13,22 @@
     <div class="flexslider">
       <ul class="slides">
         <!-- start: slide -->
+        @if ($sliders)
+         @foreach ($sliders as $slider)
+         
         <li>
           <div class="row max-inner">
-            <div class="columns col-12 slide-image"><img src="{{asset('frontend/images/slide-image-1.jpg')}}" /></div>
+            <div class="columns col-12 slide-image"><img src="{{asset($slider->image)}}" alt="slider_image" /></div>
             <div class="columns col-12 col-centered slide-content">
-              <h2>Vogue Style</h2>
-              <h3>For modern women</h3>
+              <h2>{{$slider->title}}</h2>
+              <h3>{{$slider->subtitle}}</h3>
               <a href="{{route('shop-page')}}" class="btn cta">See the collection</a>
             </div>
           </div>
         </li>
-        <!-- end: slide -->
-        <!-- start: slide -->
-        <li>
-          <div class="row max-inner">
-            <div class="columns col-12 slide-image"><img src="{{asset('frontend/images/slide-image-2.jpg')}}" /></div>
-            <div class="columns col-12 col-centered slide-content">
-              <h2>New Collection</h2>
-              <h3>For your beauty and fashion</h3>
-              <a href="#" class="btn cta">See the collection</a>
-            </div>
-          </div>
-        </li>
-        <!-- end: slide -->
-        <!-- start: slide -->
-        <li>
-          <div class="row max-inner">
-            <div class="columns col-12 slide-image"><img src="{{asset('frontend/images/slide-image-3.jpg')}}" /></div>
-            <div class="columns col-12 col-centered slide-content">
-              <h2>Feel the luxury</h2>
-              <h3>special collection</h3>
-              <a href="#" class="btn cta">See the collection</a>
-            </div>
-          </div>
-        </li>
+               
+         @endforeach
+        @endif
         <!-- end: slide -->
       </ul>
     </div>

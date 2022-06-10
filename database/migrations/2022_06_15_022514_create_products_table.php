@@ -23,7 +23,7 @@ return new class extends Migration
             $table->integer('product_quantity');
             $table->text('product_short_description');
             $table->text('product_long_description');
-             $table->text('product_image');
+            $table->text('product_image');
             $table->tinyInteger('publication_status');
             $table->timestamps();
         });

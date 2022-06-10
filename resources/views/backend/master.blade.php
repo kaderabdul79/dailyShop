@@ -130,7 +130,7 @@
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
-                <a href="#"><h2>Daily Shop</h2></a>
+                <a href="{{route('home-page')}}"><h2>Daily Shop</h2></a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
@@ -140,7 +140,7 @@
                         </li>
                         <li class="active has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Category Module<i class="fas fa-angle-down ml-2"></i></a>
+                                <i class="fas fa-copy"></i>Category Module<i class="fas fa-angle-down ml-2"></i></a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
                                     <a href="{{route('add-category')}}">Add Category</a>
@@ -152,7 +152,7 @@
                         </li>
                         <li class="active has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Brand Module<i class="fas fa-angle-down ml-2"></i></a>
+                                <i class="fas fa-trophy"></i>Brand Module<i class="fas fa-angle-down ml-2"></i></a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
                                     <a href="{{route('add-brand')}}">Add Brand</a>
@@ -164,7 +164,7 @@
                         </li>
                         <li class="active has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Product Module<i class="fas fa-angle-down ml-2"></i></a>
+                                <i class="fas fa-shopping-basket"></i>Product Module<i class="fas fa-angle-down ml-2"></i></a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
                                     <a href="{{route('add-product')}}">Add Product</a>
@@ -174,6 +174,20 @@
                                 </li>
                             </ul>
                         </li>
+                        {{-- slider --}}
+                        <li class="active has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-desktop"></i>Components<i class="fas fa-angle-down ml-2"></i></a>
+                                 <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="{{route('add-slider')}}">Add Slider</a>
+                                </li>
+                                <li>
+                                    <a href="{{route('manage-slider')}}">Manage Slider</a>
+                                </li>
+                            </ul>
+                        </li>
+                        {{-- slider --}}
                             </ul>
                         </li>
                     </ul>

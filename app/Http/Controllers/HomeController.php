@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Brand;
+use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,7 +26,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // return view('home');
-        return view('backend.home.home');
+        $activeCategory = Category::where('publication_status','=','1')->count();
+        $activeBrand = Brand::where('publication_status','=','1')->count();
+        $activeProduct = Product::where('publication_status','=','1')->count();
+        return view('backend.home.home',[
+            'activeProduct'     =>  $activeProduct,
+            'activeBrand'       =>  $activeBrand,
+            'activeCategory'  =>    $activeCategory
+        ]);
     }
 }
