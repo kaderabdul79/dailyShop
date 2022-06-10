@@ -19,7 +19,7 @@
             <div class="columns col-12 col-centered slide-content">
               <h2>Vogue Style</h2>
               <h3>For modern women</h3>
-              <a href="#" class="btn cta">See the collection</a>
+              <a href="{{route('shop-page')}}" class="btn cta">See the collection</a>
             </div>
           </div>
         </li>
@@ -87,37 +87,5 @@
   </section>
   <!-- end: product grid -->
 
-
-
-  <!-- start: blog section -->
-  <section class="blog-section">
-
-    <header class="row section-header max-inner">
-      <div class="columns-12 col-centered">
-        <h2>Blog news</h2><hr />
-      </div>
-    </header>
-
-    <div class="row max-inner">
-
-      <!-- start: blog item -->
-      <div class="columns col-3 grid-item">
-        <div class="grid-item-media"><a href="#"><img src="{{asset('frontend/images/blog-item-image-1.jpg')}}" /></a></div>
-        <div class="grid-item-desc">
-          <h2>
-            <a href="product.html">
-              <span class="grid-item-meta">30 May 2014</span>
-              <span class="grid-item-title">Dolor in reprehenderit</span>
-            </a>
-          </h2>
-          <p>Natus error sit voluptatem accusantium doloremque laudantium totam rem...</p>
-        </div>
-      </div>
-      <!-- end: blog item -->
-
-    </div>
-
-  </section>
-  <!-- end: blog section -->
 
 @endsection

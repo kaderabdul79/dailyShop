@@ -38,21 +38,6 @@
           </div>
   
           <div class="columns col-2 sort-options">
-            <span>Material:</span>
-            <form>
-              <label for="material-select" class="select-label">
-                <select class="styled-drop-down" id="material-select" name="material-select">
-                  <option selected="selected">Lorem Ipsum</option>
-                  <option>Lorem Ipsum</option>
-                  <option>Lorem Ipsum</option>
-                  <option>Lorem Ipsum</option>
-                  <option>Lorem Ipsum</option>
-                </select>
-              </label>
-            </form>
-          </div>
-  
-          <div class="columns col-2 sort-options">
             <span>Color:</span>
             <form>
               <label for="color-select" class="select-label">

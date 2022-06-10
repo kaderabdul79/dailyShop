@@ -51,8 +51,12 @@ Route::get('/product/delete-product/{id}', [ProductController::class,'deleteProd
 // start for fronted
 Route::get('/', [FrontendHomeController::class,'showHomePage'])->name('home-page');
 Route::get('/shop', [FrontendHomeController::class,'showShopPage'])->name('shop-page');
-Route::get('/product/{id}', [FrontendHomeController::class,'showProductDetails'])->name('product-details');
+Route::get('/product-details/{id}', [FrontendHomeController::class,'showProductDetails'])->name('product-details');
 
 Route::get('/cart/show-cart', [CartController::class, 'showCart'])->name('cart.show-cart');
 
-// Route::post('/cart/add-to-cart', [CartController::class, 'addToCart'])->name('add-to-cart');
+Route::post('/cart/add-to-cart', [CartController::class, 'addToCart'])->name('add-to-cart');
+
+Route::post('/cart/update-cart-product/{rowId}', [CartController::class, 'updateToCart'])->name('update-cart-product');
+
+Route::get('/cart/remove-to-cart/{rowId}', [CartController::class, 'removeToCart'])->name('remove-to-cart');

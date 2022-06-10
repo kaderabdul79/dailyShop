@@ -40,9 +40,9 @@
 
 
         <!-- start: product options form -->
-        <form action="cart.html">
-
-        <div class="row product-options">
+        <form action="{{route('add-to-cart')}}" method="post">
+          @csrf
+        {{-- <div class="row product-options">
           
           <div class="columns col-4 sort-options">
             <span class="label-text">Size:</span>
@@ -83,21 +83,20 @@
             </label>
           </div>
           
-        </div>
-
+        </div> --}}
+       {{--  --}}
+      
         <div class="row product-options">
           <div class="columns col-6">
             <label for="product-quantity" class="product-quantity">
               <span class="label-text">Quantity:</span>
-              <!-- <input type="text" value="1" id="product-quantity" /> -->
-              <input type="number" value="1" id="product-quantity" />
+              <input type="hidden" name="product_id" value="{{$product->id}}" />
+              <input type="number" min="1" value="1" name="qty" id="qty">
             </label>              
           </div>
 
           <div class="columns col-6">
-            <button type="submit" class="submit">
-              <i class="fa fa-shopping-cart"></i> Add to cart
-            </button>              
+            <input type="submit" name="submit" value="Add to cart" class="submit" />
           </div>
         </div>
 

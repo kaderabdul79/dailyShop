@@ -6,22 +6,20 @@ use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class FrontendHomeController extends Controller
 {
     public function showHomePage(){
         $products = Product::orderBy('id','DESC')->take(4)->get();
+        $cartCollection = Cart::content();
         return view('frontend.home',[
-            'products' => $products
+            'products' => $products,
+            'cartCollection' => $cartCollection
         ]);
+
+        
     }
-    
-    // public function showProduct(){
-    //     $products = Product::where('publication_status',1)->get();
-    //     return view('frontend.shop.shop',[
-    //         'products' => $products
-    //     ]);
-    // }
     
     public function showProductDetails($id){
         $product = Product::find($id);

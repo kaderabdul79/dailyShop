@@ -14,7 +14,6 @@
               <ul>
                 <li><a href="{{route('shop-page')}}">Shop</a></li>
                 <li><a href="{{route('cart.show-cart')}}">Cart</a></li>
-                {{-- <li><a href="{{route('product-details')}}">Promotion</a></li> --}}
               </ul>
             </nav>
           </div>
