@@ -32,7 +32,7 @@ class FrontendHomeController extends Controller
         ]);
     }
 
-    public function showShopPage(){
+    public function showProductPage(){
         $products = Product::where('publication_status',1)->get();
         return view('frontend.shop.shop',[
             'products' => $products

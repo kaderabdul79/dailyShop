@@ -22,7 +22,7 @@
             <div class="columns col-12 col-centered slide-content">
               <h2>{{$slider->title}}</h2>
               <h3>{{$slider->subtitle}}</h3>
-              <a href="{{route('shop-page')}}" class="btn cta">See the collection</a>
+              <a href="{{route('product-page')}}" class="btn cta">See the collection</a>
             </div>
           </div>
         </li>
