@@ -1,3 +1,20 @@
+# Daily Shop
+
+![dailyshop-project backend showcase](dashboard.png)
+![dailyshop-project frontend showcase](homepage.png)
+
+## Features :
+
+<ul>For Authentication, Used Laravel UI package.</ul>
+<ul>Add Product and Manage Them from Dashboard.</ul>
+<ul>For a Product can have multiple sub images So, These Images will store seperate Table.</ul>
+<ul>Add Category and Manage Them from Dashboard.</ul>
+<ul>Add Brand and Manage Them from Dashboard.</ul>
+<ul>Add Slider and Manage Them from Dashboard and It will show fronted dynamically</ul>
+<ul>User can buy product.For add to card used "bumbummen99/shoppingcart" this package.</ul>
+<ul>User can add product to card, update also they can remove from cart</ul>
+<ul>Multiple Image Upload, all store in local PC and retrieve also from there, just img name will goes to db.<ul>
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
